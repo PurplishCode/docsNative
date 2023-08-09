@@ -1,0 +1,31 @@
+We'll setup your own React-Native via Android Studio.. Follow along.
+
+⚠ Prerequesite ⚠
+-> Have a chocolatey via node installed on your Local machine <-
+
+ 
+
+2. Let's install the required dependency to run our React Application. (choco install -y nodejs-lts) AND (choco install microsoft-openjdk11) on the Powershell. (Administrator roles required)
+
+3. Install the IDE to run our React-Native application.. (Android Studio) And of course, While you're at the installing page, don't forget to check upon these checkboxes. (Android SDK, Android SDK Platform, Android Virtual Device)
+
+4. Then install the Android SDK.. React-Native app needs Android-13 (Tiramisu) SDK specifically. Open Android Studio -> More Action -> SDK Manager.
+
+5. Select the "SDK Platforms" tab from within the SDK Manager, then check the box next to "Show Package Details" in the bottom right corner. Look for and expand the Android 13 (Tiramisu) entry, then make sure the following items are checked:
+
+    Android SDK Platform 33
+    Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image.
+
+    Next, select the "SDK Tools" tab and check the box next to "Show Package Details" here as well. Look for and expand the Android SDK Build-Tools entry, then make sure that 33.0.0 is selected.
+
+Finally, click "Apply" to download and install the Android SDK and related build tools.
+
+6. Now, we'll configure the environment_variables (ANDROID_HOME), Go to your Windows Control Panel -> Select Users Account, then click it again -> Click on change my environment Variables -> Naviage into your User Variable -> Click New and name the variable as ANDROID_HOME, don't forget to add your PATH that points into your SDK.
+
+7. To ensure the environment variable already sets in.. Go to your Powershell, type in (Get-ChildItem -Path Env:\) to verify ANDROID_HOME wherebouts.
+
+8. Now after everything's done.. It's time to build the React Native application itself. Go to your Command Prompt. And type in npx react-native@latest init (projectName) to start.
+
+9. Alright, since we've only gotten started.. You will likely need to create a new AVD. Select "Create Virtual Device...", then pick any Phone from the list and click "Next", then select the Tiramisu API Level 33 image.
+
+10. It's time to run our Native Application! Go to your React-Native folder, and start development by typing npm start (Note: This'll start our Metro, Javascript bundler that's shipped with your React-Native).. And finally npm run android to start your Application on AVD (Android Virtual Device | Intel x64 Atom_64 System Image) emulator.
